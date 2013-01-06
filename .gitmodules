@@ -1,0 +1,12 @@
+[submodule "pathogen"]
+	path = pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "bundle/lusty"]
+	path = bundle/lusty
+	url = git://github.com/sjbach/lusty.git
+[submodule "bundle/cscope_macros"]
+	path = bundle/cscope_macros
+	url = git://github.com/vim-scripts/cscope_macros.vim.git
