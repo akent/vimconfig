@@ -10,7 +10,6 @@ set autoindent
 set smartindent
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
-" set spl=en_au spell
 
 call pathogen#infect()
 filetype plugin indent on
@@ -18,12 +17,21 @@ filetype plugin indent on
 set ignorecase
 set smartcase
 
+set mouse=a
+
 " display whole paragraphs
 set display+=lastline
 
 " in insert mode, arrow keys ignore line wrap
 inoremap <Down> <C-O>gj
 inoremap <Up> <C-O>gk
+
+nnoremap ; :
+inoremap jj <Esc>
+
+" Paranoid saving
+nnoremap <Space><Space> :w<cr>
+vnoremap <Space><Space> <esc>:w<cr>
 
 set grepprg=ack-grep\ -a
 
