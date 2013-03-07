@@ -10,6 +10,7 @@ set autoindent
 set smartindent
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
+set number
 
 call pathogen#infect()
 filetype plugin indent on
@@ -39,6 +40,12 @@ set hlsearch
 set wildmode=list:longest
 
 highlight ExtraWhitespace ctermbg=red guibg=red
+highlight clear SignColumn
+highlight LineNr ctermfg=grey
+
+" Always display SignColumn
+sign define dummy
+execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Show trailing whitespace:
 autocmd Syntax * syn match ExtraWhitespace /\s\+$/
