@@ -44,8 +44,8 @@ highlight clear SignColumn
 highlight LineNr ctermfg=grey
 
 " Always display SignColumn
-sign define dummy
-execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Show trailing whitespace:
 autocmd Syntax * syn match ExtraWhitespace /\s\+$/
