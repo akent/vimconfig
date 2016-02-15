@@ -3,6 +3,13 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 colorscheme adam
 syntax on
 set background=dark
+
+if $SHELL =~ 'bin/fish'
+    set shell=/bin/sh
+endif
+
+set clipboard=unnamed
+
 set guifont=Inconsolata-dz\ 16
 nmap <C-N><C-N> :set invnumber <CR>
 set linebreak
@@ -78,3 +85,10 @@ set expandtab
 
 " .tac are Python files
 au BufNewFile,BufRead *.tac set ft=python
+
+" less distraction markdown settings
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+autocmd FileType markdown setlocal spell spelllang=en_au
+autocmd FileType markdown setlocal wrap nolist linebreak
+autocmd FileType markdown setlocal nonumber
+autocmd FileType markdown highlight! link FoldColumn Normal
