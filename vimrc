@@ -1,4 +1,23 @@
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'sjbach/lusty'
+Plugin 'fatih/vim-go'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-scripts/fish.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 colorscheme adam
 syntax on
@@ -19,7 +38,6 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
 set number
 
-call pathogen#infect()
 filetype plugin indent on
 
 set ignorecase
@@ -70,6 +88,8 @@ set guioptions-=lrT
 " Disable menu bar
 set guioptions-=m
 
+set backspace=indent,eol,start
+
 set hidden
 
 nmap <silent> <Leader>f :LustyFilesystemExplorer<CR>
@@ -82,6 +102,9 @@ set wildignore=*.o
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+let g:session_autosave = 'no'
+let g:go_fmt_command = "goimports"
 
 " .tac are Python files
 au BufNewFile,BufRead *.tac set ft=python
