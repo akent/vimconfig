@@ -14,6 +14,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/fish.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'tell-k/vim-autopep8'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -105,6 +108,11 @@ set expandtab
 
 let g:session_autosave = 'no'
 let g:go_fmt_command = "goimports"
+
+let g:autopep8_disable_show_diff=1
+" let g:autopep8_on_save = 1
+
+autocmd FileType python set equalprg=autopep8\ -
 
 " .tac are Python files
 au BufNewFile,BufRead *.tac set ft=python
